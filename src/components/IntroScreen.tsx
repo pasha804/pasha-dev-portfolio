@@ -9,6 +9,7 @@ interface IntroScreenProps {
 export const IntroScreen: React.FC<IntroScreenProps> = ({ onComplete }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isExiting, setIsExiting] = useState(false);
+  const [hasTapped, setHasTapped] = useState(false);
 
   const handleFinish = useCallback(() => {
     if (isExiting) return;
@@ -22,10 +23,12 @@ export const IntroScreen: React.FC<IntroScreenProps> = ({ onComplete }) => {
   const handleScreenClick = useCallback(() => {
     const video = videoRef.current;
     if (video) {
-      if (video.muted) {
+      if (video.muted || video.paused) {
         // First click: unmute and reset time to 0 to watch with sound
         video.muted = false;
         video.currentTime = 0;
+        video.play().catch(() => {});
+        setHasTapped(true);
       } else {
         // Second click: skip intro
         handleFinish();
@@ -47,10 +50,12 @@ export const IntroScreen: React.FC<IntroScreenProps> = ({ onComplete }) => {
     if (playPromise !== undefined) {
       playPromise.catch((_err) => {
         // Browser blocked unmuted autoplay!
-        // We MUST fallback to muted, otherwise the video won't show at all (black screen).
+        // Fallback to muted, otherwise the video won't show at all (black screen).
         video.muted = true;
         video.play().catch(() => {});
       });
+    } else {
+        setHasTapped(true); // If it played without error, it might already have sound
     }
 
     const handleEnded = () => {
@@ -86,11 +91,11 @@ export const IntroScreen: React.FC<IntroScreenProps> = ({ onComplete }) => {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, scale: 1.04 }}
           transition={{ duration: 0.6, ease: 'easeInOut' }}
-          className="fixed inset-0 z-[100] bg-[#050508] flex items-center justify-center overflow-hidden select-none cursor-pointer"
+          className="fixed inset-0 z-[100] bg-black flex items-center justify-center overflow-hidden select-none cursor-pointer"
           onClick={handleScreenClick}
         >
           {/* Pure Full-Screen Video Container (Merged Background) */}
-          <div className="relative w-full h-full flex items-center justify-center bg-[#050508]">
+          <div className="relative w-full h-full flex items-center justify-center bg-black">
             <video
               ref={videoRef}
               src="/gemini_generated_video_d13b1ceb.mp4"
@@ -99,6 +104,16 @@ export const IntroScreen: React.FC<IntroScreenProps> = ({ onComplete }) => {
               preload="auto"
               className="w-full h-full object-contain md:object-cover max-w-full max-h-full"
             />
+            {!hasTapped && (
+              <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: [0, 1, 0.5, 1] }}
+                transition={{ duration: 2, repeat: Infinity }}
+                className="absolute bottom-10 left-0 w-full text-center text-white/50 text-sm tracking-widest uppercase font-mono z-10"
+              >
+                Tap anywhere for sound
+              </motion.div>
+            )}
           </div>
         </motion.div>
       )}
