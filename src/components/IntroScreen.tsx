@@ -21,14 +21,16 @@ export const IntroScreen: React.FC<IntroScreenProps> = ({ onComplete }) => {
 
   const handleScreenClick = useCallback(() => {
     const video = videoRef.current;
-    // If video is paused (e.g. browser blocked autoplay), first click will play it with sound
-    if (video && video.paused) {
-      video.muted = false;
-      video.play().catch(() => {
+    if (video) {
+      if (video.muted) {
+        // First click: unmute and reset time to 0 to watch with sound
+        video.muted = false;
+        video.currentTime = 0;
+      } else {
+        // Second click: skip intro
         handleFinish();
-      });
+      }
     } else {
-      // If already playing, click will skip
       handleFinish();
     }
   }, [handleFinish]);
@@ -37,15 +39,17 @@ export const IntroScreen: React.FC<IntroScreenProps> = ({ onComplete }) => {
     const video = videoRef.current;
     if (!video) return;
 
-    // We must ensure the video tries to play with sound
+    // Try to play unmuted first
     video.muted = false;
     
     // Attempt autoplay
     const playPromise = video.play();
     if (playPromise !== undefined) {
       playPromise.catch((_err) => {
-        // If the browser blocks unmuted autoplay, we DO NOT mute it. 
-        // It will just stay paused until the user taps the screen.
+        // Browser blocked unmuted autoplay!
+        // We MUST fallback to muted, otherwise the video won't show at all (black screen).
+        video.muted = true;
+        video.play().catch(() => {});
       });
     }
 
