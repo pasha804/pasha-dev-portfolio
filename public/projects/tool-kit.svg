@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0515"/>
+      <stop offset="50%" stop-color="#06020c"/>
+      <stop offset="100%" stop-color="#020106"/>
+    </linearGradient>
+    <linearGradient id="purpleGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c084fc"/>
+      <stop offset="50%" stop-color="#d946ef"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="cyanAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Deep Obsidian Space Canvas -->
+  <rect width="1280" height="720" fill="url(#bgGrad)"/>
+
+  <!-- Matrix Grid -->
+  <g opacity="0.15" stroke="#a855f7" stroke-width="1">
+    <line x1="0" y1="120" x2="1280" y2="120"/>
+    <line x1="0" y1="240" x2="1280" y2="240"/>
+    <line x1="0" y1="360" x2="1280" y2="360"/>
+    <line x1="0" y1="480" x2="1280" y2="480"/>
+    <line x1="0" y1="600" x2="1280" y2="600"/>
+    <line x1="160" y1="0" x2="160" y2="720"/>
+    <line x1="320" y1="0" x2="320" y2="720"/>
+    <line x1="480" y1="0" x2="480" y2="720"/>
+    <line x1="640" y1="0" x2="640" y2="720"/>
+    <line x1="800" y1="0" x2="800" y2="720"/>
+    <line x1="960" y1="0" x2="960" y2="720"/>
+    <line x1="1120" y1="0" x2="1120" y2="720"/>
+  </g>
+
+  <!-- Cyber Glow Spheres -->
+  <circle cx="340" cy="280" r="180" fill="#a855f7" opacity="0.12" filter="blur(60px)"/>
+  <circle cx="940" cy="440" r="220" fill="#d946ef" opacity="0.1" filter="blur(70px)"/>
+
+  <!-- Main Terminal HUD Window -->
+  <rect x="120" y="80" width="1040" height="560" rx="16" fill="#0d081c" fill-opacity="0.88" stroke="#a855f7" stroke-width="2" stroke-opacity="0.6"/>
+  <rect x="120" y="80" width="1040" height="52" rx="16" fill="#170e30" fill-opacity="0.9"/>
+  <line x1="120" y1="132" x2="1160" y2="132" stroke="#a855f7" stroke-opacity="0.3" stroke-width="1.5"/>
+
+  <!-- Window Dots -->
+  <circle cx="156" cy="106" r="6" fill="#ef4444"/>
+  <circle cx="178" cy="106" r="6" fill="#eab308"/>
+  <circle cx="200" cy="106" r="6" fill="#22c55e"/>
+
+  <text x="236" y="112" font-family="'Orbitron', monospace, sans-serif" font-size="14" font-weight="700" fill="#c084fc" letter-spacing="2">PASHA_TOOLKIT // DEV_SUITE_v3.2 [CLIENT-SIDE PRIVACY]</text>
+  <text x="1080" y="112" font-family="monospace" font-size="12" fill="#4ade80" font-weight="600">● 100% OFFLINE</text>
+
+  <!-- Left Sidebar Micro-Apps -->
+  <rect x="144" y="156" width="260" height="460" rx="10" fill="#140b2b" stroke="#7e22ce" stroke-opacity="0.4"/>
+  
+  <rect x="160" y="176" width="228" height="48" rx="6" fill="#3b0764" stroke="#c084fc" stroke-width="1.5"/>
+  <text x="180" y="205" font-family="'Orbitron', sans-serif" font-size="13" font-weight="700" fill="#ffffff">⚡ JSON SCHEMA</text>
+
+  <rect x="160" y="236" width="228" height="48" rx="6" fill="#190e38"/>
+  <text x="180" y="265" font-family="sans-serif" font-size="13" font-weight="600" fill="#a855f7">🔍 REGEX DEBUGGER</text>
+
+  <rect x="160" y="296" width="228" height="48" rx="6" fill="#190e38"/>
+  <text x="180" y="325" font-family="sans-serif" font-size="13" font-weight="600" fill="#a855f7">📊 SQL FORMATTER</text>
+
+  <rect x="160" y="356" width="228" height="48" rx="6" fill="#190e38"/>
+  <text x="180" y="385" font-family="sans-serif" font-size="13" font-weight="600" fill="#a855f7">🎨 HARMONY PALETTE</text>
+
+  <rect x="160" y="416" width="228" height="48" rx="6" fill="#190e38"/>
+  <text x="180" y="445" font-family="sans-serif" font-size="13" font-weight="600" fill="#a855f7">🔐 TOKEN & HASH</text>
+
+  <!-- Right Code & Output Workspace -->
+  <rect x="428" y="156" width="708" height="460" rx="10" fill="#090514" stroke="#a855f7" stroke-opacity="0.3"/>
+  
+  <!-- Code Lines -->
+  <g font-family="'Fira Code', 'JetBrains Mono', monospace" font-size="14">
+    <text x="456" y="200" fill="#c084fc">// Web Worker JSON Processing Thread [Zero Memory Leak]</text>
+    <text x="456" y="235" fill="#e879f9">const <tspan fill="#38bdf8">payloadValidator</tspan> = new Worker('<tspan fill="#4ade80">./parser.worker.js</tspan>');</text>
+    <text x="456" y="270" fill="#f43f5e">payloadValidator.<tspan fill="#38bdf8">onmessage</tspan> = ({ data }) =&gt; {</text>
+    <text x="486" y="305" fill="#f1f5f9">  const { valid, schemaTree, executionTimeMs } = data;</text>
+    <text x="486" y="340" fill="#c084fc">  telemetry.<tspan fill="#38bdf8">recordBenchmark</tspan>({ latency: executionTimeMs });</text>
+    <text x="486" y="375" fill="#4ade80">  console.log(`Payload status: VALIDATED in ${executionTimeMs}ms`);</text>
+    <text x="456" y="410" fill="#f43f5e">};</text>
+  </g>
+
+  <!-- Telemetry HUD Card inside Editor -->
+  <rect x="456" y="450" width="652" height="136" rx="8" fill="#180c33" stroke="#c084fc" stroke-width="1.5" stroke-dasharray="4 2"/>
+  
+  <text x="484" y="490" font-family="'Orbitron', sans-serif" font-size="12" font-weight="700" fill="#c084fc" letter-spacing="1">CLIENT BENCHMARK TELEMETRY</text>
+  <text x="484" y="525" font-family="monospace" font-size="28" font-weight="800" fill="#38bdf8">0.42 ms <tspan font-size="14" fill="#a855f7">AVERAGE IN-BROWSER PARSE SPEED</tspan></text>
+  <text x="484" y="560" font-family="sans-serif" font-size="12" fill="#4ade80">✓ ZERO DATA TRANSFERRED TO EXTERNAL SERVERS • 100% LOCAL PRIVACY</text>
+
+  <!-- Corner chamfers / HUD Accents -->
+  <polygon points="120,80 160,80 120,120" fill="#c084fc"/>
+  <polygon points="1160,640 1120,640 1160,600" fill="#d946ef"/>
+</svg>

@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="100%" height="100%">
+  <defs>
+    <linearGradient id="tplBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070312"/>
+      <stop offset="50%" stop-color="#0a0518"/>
+      <stop offset="100%" stop-color="#020106"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e103d"/>
+      <stop offset="100%" stop-color="#0c061a"/>
+    </linearGradient>
+    <linearGradient id="purpleNeon" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c084fc"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="720" fill="url(#tplBgGrad)"/>
+
+  <!-- Background Cyber Isometric Lines -->
+  <g opacity="0.12" stroke="#a855f7" stroke-width="1.5">
+    <line x1="0" y1="180" x2="1280" y2="180"/>
+    <line x1="0" y1="360" x2="1280" y2="360"/>
+    <line x1="0" y1="540" x2="1280" y2="540"/>
+    <line x1="200" y1="0" x2="200" y2="720"/>
+    <line x1="400" y1="0" x2="400" y2="720"/>
+    <line x1="600" y1="0" x2="600" y2="720"/>
+    <line x1="800" y1="0" x2="800" y2="720"/>
+    <line x1="1000" y1="0" x2="1000" y2="720"/>
+  </g>
+
+  <!-- Big Ambient Purple Bloom -->
+  <circle cx="640" cy="360" r="300" fill="#a855f7" opacity="0.15" filter="blur(80px)"/>
+
+  <!-- Header Banner -->
+  <text x="640" y="80" text-anchor="middle" font-family="'Orbitron', sans-serif" font-size="28" font-weight="800" fill="#ffffff" letter-spacing="3">TEMPLATE <tspan fill="#c084fc">PLACE</tspan> // ARCHITECTURE SHOWCASE</text>
+  <text x="640" y="112" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#a855f7" letter-spacing="1">CURATED HIGH-PERFORMANCE WEB ARCHITECTURES &amp; MODERN LANDING SYSTEMS</text>
+
+  <!-- 3 Isometric / Floating Template Showcase Cards -->
+  <!-- Card 1 (Left - SaaS Dashboard) -->
+  <g transform="translate(140, 160)">
+    <rect width="280" height="420" rx="14" fill="url(#cardGrad)" stroke="#7e22ce" stroke-width="2"/>
+    <rect width="280" height="160" rx="14" fill="#1b0c36"/>
+    <circle cx="32" cy="28" r="5" fill="#f43f5e"/>
+    <circle cx="48" cy="28" r="5" fill="#eab308"/>
+    <circle cx="64" cy="28" r="5" fill="#22c55e"/>
+    
+    <!-- Mini UI elements inside card -->
+    <rect x="24" y="56" width="232" height="16" rx="4" fill="#3b1b6d"/>
+    <rect x="24" y="82" width="100" height="56" rx="6" fill="#581c87"/>
+    <rect x="134" y="82" width="122" height="56" rx="6" fill="#3b1b6d"/>
+    
+    <text x="24" y="200" font-family="'Orbitron', sans-serif" font-size="16" font-weight="700" fill="#ffffff">CYBER SAAS PRO</text>
+    <text x="24" y="226" font-family="sans-serif" font-size="12" fill="#94a3b8">Next.js 15 • Tailwind • Edge</text>
+    <text x="24" y="258" font-family="sans-serif" font-size="12" fill="#c084fc">99/100 Lighthouse Performance</text>
+    
+    <rect x="24" y="340" width="232" height="42" rx="8" fill="#581c87" stroke="#c084fc" stroke-width="1"/>
+    <text x="140" y="366" text-anchor="middle" font-family="'Orbitron', sans-serif" font-size="12" font-weight="700" fill="#ffffff">LIVE PREVIEW →</text>
+  </g>
+
+  <!-- Card 2 (Center - Featured Agency Portal) -->
+  <g transform="translate(480, 140)">
+    <rect width="320" height="460" rx="16" fill="#170c30" stroke="#c084fc" stroke-width="2.5"/>
+    <rect width="320" height="190" rx="16" fill="#24114d"/>
+    <circle cx="36" cy="30" r="6" fill="#f43f5e"/>
+    <circle cx="56" cy="30" r="6" fill="#eab308"/>
+    <circle cx="76" cy="30" r="6" fill="#22c55e"/>
+    
+    <!-- Center Card Mini Graphic -->
+    <text x="160" y="90" text-anchor="middle" font-family="'Orbitron', sans-serif" font-size="18" font-weight="900" fill="#c084fc">AGENCY NEBULA</text>
+    <rect x="36" y="116" width="248" height="24" rx="6" fill="#4c1d95"/>
+    <rect x="36" y="148" width="116" height="20" rx="4" fill="#3b1b6d"/>
+    <rect x="168" y="148" width="116" height="20" rx="4" fill="#ec4899" fill-opacity="0.3"/>
+    
+    <rect x="24" y="210" width="90" height="24" rx="12" fill="#3b0764" stroke="#c084fc"/>
+    <text x="69" y="226" text-anchor="middle" font-family="'Orbitron', sans-serif" font-size="10" font-weight="700" fill="#f3e8ff">FEATURED</text>
+
+    <text x="24" y="260" font-family="'Orbitron', sans-serif" font-size="18" font-weight="800" fill="#ffffff">DEVELOPER STUDIO</text>
+    <text x="24" y="288" font-family="sans-serif" font-size="13" fill="#cbd5e1">Framer Motion • 3D Canvas • TS</text>
+    <text x="24" y="318" font-family="sans-serif" font-size="12" fill="#4ade80">● Ultra Clean Component Codebase</text>
+
+    <rect x="24" y="380" width="272" height="48" rx="10" fill="url(#purpleNeon)"/>
+    <text x="160" y="410" text-anchor="middle" font-family="'Orbitron', sans-serif" font-size="14" font-weight="800" fill="#05020a" letter-spacing="1">EXPLORE ARCHITECTURE</text>
+  </g>
+
+  <!-- Card 3 (Right - E-Commerce Modern) -->
+  <g transform="translate(860, 160)">
+    <rect width="280" height="420" rx="14" fill="url(#cardGrad)" stroke="#7e22ce" stroke-width="2"/>
+    <rect width="280" height="160" rx="14" fill="#1b0c36"/>
+    <circle cx="32" cy="28" r="5" fill="#f43f5e"/>
+    <circle cx="48" cy="28" r="5" fill="#eab308"/>
+    <circle cx="64" cy="28" r="5" fill="#22c55e"/>
+    
+    <rect x="24" y="56" width="232" height="16" rx="4" fill="#3b1b6d"/>
+    <rect x="24" y="82" width="70" height="60" rx="6" fill="#581c87"/>
+    <rect x="104" y="82" width="70" height="60" rx="6" fill="#581c87"/>
+    <rect x="184" y="82" width="72" height="60" rx="6" fill="#581c87"/>
+    
+    <text x="24" y="200" font-family="'Orbitron', sans-serif" font-size="16" font-weight="700" fill="#ffffff">STOREFRONT ULTRA</text>
+    <text x="24" y="226" font-family="sans-serif" font-size="12" fill="#94a3b8">React 19 • Stripe Ready • Vite</text>
+    <text x="24" y="258" font-family="sans-serif" font-size="12" fill="#c084fc">Dynamic Catalog &amp; Cart State</text>
+
+    <rect x="24" y="340" width="232" height="42" rx="8" fill="#581c87" stroke="#c084fc" stroke-width="1"/>
+    <text x="140" y="366" text-anchor="middle" font-family="'Orbitron', sans-serif" font-size="12" font-weight="700" fill="#ffffff">LIVE PREVIEW →</text>
+  </g>
+
+  <!-- Bottom Telemetry strip -->
+  <text x="640" y="670" text-anchor="middle" font-family="'Orbitron', monospace" font-size="11" fill="#7e22ce" letter-spacing="3">PASHA_DEV // TEMPLATE_PLACE // DEPLOYED ON VERCEL EDGE CDN</text>
+</svg>

@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg: #050508;
+    --color-purple-neon: #C084FC;
+    --color-purple-glow: #A855F7;
+    --color-purple-metal: #9333EA;
+  }
+
+  html {
+    color-scheme: dark;
+    background-color: #050508;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #050508;
+    color: #CBD5E1;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', -apple-system, sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Custom Metallic Purple Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #050508;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #A855F7 0%, #6B21A8 100%);
+  border-radius: 9999px;
+  border: 1px solid rgba(192, 132, 252, 0.4);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C084FC;
+  box-shadow: 0 0 10px rgba(192, 132, 252, 0.8);
+}
+
+/* Lenis smooth scroll */
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Metallic Purple Shimmer & Glow Utilities */
+.text-metallic-purple {
+  background: linear-gradient(135deg, #FFFFFF 0%, #E9D5FF 30%, #C084FC 60%, #9333EA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-purple-glow {
+  text-shadow: 0 0 15px rgba(192, 132, 252, 0.6), 0 0 30px rgba(168, 85, 247, 0.4);
+}
+
+.glow-purple-box {
+  box-shadow: 0 0 25px -5px rgba(168, 85, 247, 0.35), inset 0 0 15px -3px rgba(192, 132, 252, 0.15);
+}
+
+/* Cyber Tech Grid */
+.cyber-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(168, 85, 247, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(168, 85, 247, 0.05) 1px, transparent 1px);
+}
